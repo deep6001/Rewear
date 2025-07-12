@@ -1,0 +1,7 @@
+const USER_ROLES_ENUM = {
+  ADMIN: 1,
+  // EXPERT: 2,
+  CLIENT: 2,
+};
+const MAX_CONCURRENT_BOOKINGS = 5;
+module.exports = { USER_ROLES_ENUM, MAX_CONCURRENT_BOOKINGS };
