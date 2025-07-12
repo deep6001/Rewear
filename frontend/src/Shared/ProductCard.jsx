@@ -4,14 +4,14 @@ import React, { useRef } from 'react'
 const ProductCard = ({ product }) => {
   return (
      <div className="bg-white rounded-xl shadow-lg overflow-hidden w-72 h-96 hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out border border-gray-100 group">
-      {/* Product Image */}
+     
       <div className="h-48 overflow-hidden relative">
         <img
           src={product.image}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
-        {/* Age Badge */}
+      
         <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-medium">
           {product.age}
         </div>

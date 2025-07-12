@@ -11,7 +11,7 @@ const Caraousel = ({ data }) => {
 
   return (
     <div className=" mx-auto mt-10 relative">
-      {/* Navigation Buttons */}
+     
       <button
         ref={prevRef}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border px-3 py-1 rounded-l shadow"
@@ -31,7 +31,7 @@ const Caraousel = ({ data }) => {
         spaceBetween={5}
         slidesPerView={4}
         onInit={(swiper) => {
-          // Connect buttons after Swiper initializes
+          
           swiper.params.navigation.prevEl = prevRef.current
           swiper.params.navigation.nextEl = nextRef.current
           swiper.navigation.init()
