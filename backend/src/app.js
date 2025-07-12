@@ -10,6 +10,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./middlewares/errorHandler.js");
 const  fileUpload = require('express-fileupload');
 const fs = require('fs');
+const cors = require('cors')
 // const { startBackgroundJob } = require("./services/bookingService.js");
 if (!fs.existsSync('./tmp')) {
   fs.mkdirSync('./tmp');
@@ -38,7 +39,9 @@ app.use(
     },
   })
 );
-
+app.use(cors({
+    origin: "*"
+}))
 app.use(express.json());
 app.use("/api", route);
 // startBackgroundJob();
