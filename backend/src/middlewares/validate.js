@@ -1,4 +1,3 @@
-const { ApiError } = require("../utils/ApiErrors");
 const { ApiResponse } = require("../utils/ApiResponse");
 const validate = (schema) => {
   return (req, res, next) => {

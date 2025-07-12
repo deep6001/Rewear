@@ -1,6 +1,6 @@
-const userModel = require("../models/userModel");
+const userModel = require("../models/user/userModel");
 const jwt = require("jsonwebtoken");
-const { ApiError } = require("../utils/ApiErrors");
+const { ApiError } = require("../utils/ApiError");
 const { ApiResponse } = require("../utils/ApiResponse");
 
 const Authentication = async (req, res, next) => {

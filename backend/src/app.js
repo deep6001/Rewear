@@ -8,12 +8,20 @@ const morgan = require("morgan");
 const route = require("./routes/index.js");
 const bodyParser = require("body-parser");
 const errorHandler = require("./middlewares/errorHandler.js");
+const  fileUpload = require('express-fileupload');
+const fs = require('fs');
 // const { startBackgroundJob } = require("./services/bookingService.js");
-
+if (!fs.existsSync('./tmp')) {
+  fs.mkdirSync('./tmp');
+}
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(errorHandler);
+app.use(fileUpload({
+    useTempFiles:true,
+    tempFileDir: './tmp/'
+}))
 const morganFormat =
   ":method :url :status :res[content-length] :response-time ms";
 app.use(
