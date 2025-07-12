@@ -128,7 +128,7 @@ const clothingItems = [
        <div className="w-full relative">
   <img
     src={donateimage}
-    className="h-[500px] w-full rounded-lg"
+    className="h-[500px] w-full rounded-lg object-cover"
   />
 
       <div className="absolute bottom-[10%] left-[30%] right-[30%] flex justify-between px-7">

@@ -7,6 +7,7 @@ import Login from './AuthPages/Login'
 import Register from './AuthPages/Register'
 import ProtectedPage from './Pages/Layout/ProtectedPage'
 import ProductList from './Shared/ProductList'
+import UserProfilePage from './Pages/UserFolder/UserProfilePage'
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
       {
         path:"productlist",
         element:<ProductList/>
+      },
+      {
+        path:'userProfile',
+        element:<UserProfilePage/>
       }
     ]
 

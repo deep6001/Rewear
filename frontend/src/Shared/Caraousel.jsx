@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
@@ -10,7 +10,7 @@ const Caraousel = ({ data }) => {
   const nextRef = useRef(null)
 
   return (
-    <div className=" mx-auto mt-10 relative">
+    <div className="mx-auto mt-10 relative flex justify-center items-center">
       {/* Navigation Buttons */}
       <button
         ref={prevRef}
@@ -28,21 +28,38 @@ const Caraousel = ({ data }) => {
 
       <Swiper
         modules={[Navigation]}
-        spaceBetween={5}
-        slidesPerView={4}
+        spaceBetween={10}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
         onInit={(swiper) => {
-          // Connect buttons after Swiper initializes
           swiper.params.navigation.prevEl = prevRef.current
           swiper.params.navigation.nextEl = nextRef.current
           swiper.navigation.init()
           swiper.navigation.update()
         }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          1280: {
+            slidesPerView: 5,
+          },
+        }}
       >
         {data.map((ele, index) => (
-          <SwiperSlide key={index}>
-            <div key={index}>
-                <ProductCard  product={ele}/>
-            </div>
+          <SwiperSlide key={index} className='flex justify-center'>
+            <ProductCard product={ele} />
           </SwiperSlide>
         ))}
       </Swiper>
