@@ -1,17 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import './App.css'
+import MainLayout from './Pages/Layout/MainLayout'
+import UserDashboard from './Pages/UserFolder/UserDashboard'
+import admin from './Pages/AdminFolder/admin'
 import Login from './AuthPages/Login'
 import Register from './AuthPages/Register'
+import ProtectedPage from './Pages/Layout/ProtectedPage'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const router = createBrowserRouter( [
+    {
+      path:"/",
+      element:<ProtectedPage><MainLayout/></ProtectedPage>,
+      children:[
+        {
+          path:"dashboard",
+          index:true,
+          element:<UserDashboard/>
+      },
+      {
+        path:"admin",
+        element:<admin/>
+      }
+    ]
+
+    },
+    {
+      path:"/login",
+      element:<Login/>
+    },{
+      path:"/register",
+      element:<Register/>
+    }
+  ])
 
   return (
-    <div>
-      <Register />
-    </div>
+    <RouterProvider router={router}>
+
+      
+    </RouterProvider>
      )
 }
 
