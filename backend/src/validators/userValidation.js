@@ -15,6 +15,3 @@ exports.loginValidator = Joi.object({
     password: Joi.string().min(6).required(),
 });
 
-exports.getProfile = Joi.object({
-    userId: Joi.string().required()
-}); 

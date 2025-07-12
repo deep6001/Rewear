@@ -25,7 +25,7 @@ router
     .route('/getProfile')
     .post(
         Authentication,
-        validate(getProfile),
+        // validate(getProfile),
         userController.getProfile
     )
 
