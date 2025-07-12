@@ -1,7 +1,9 @@
 import React from 'react';
 import { ShoppingBag, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header className="bg-white shadow-sm border-b border-orange-100">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +20,13 @@ const Header = () => {
           </div>
 
           {/* User Profile Section */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-6">
+
+            <button className='bg-gradient-to-r from-orange-400 to-orange-500 rounded-xl px-3 py-2 text-white cursor-pointer'
+            onClick={() => navigate("/productlist")}>
+              Product List</button>
+
+
             <button className="p-2 rounded-full bg-orange-50 hover:bg-orange-100 transition-colors duration-200 group">
               <User className="w-6 h-6 text-orange-600 group-hover:text-orange-700" />
             </button>

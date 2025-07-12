@@ -6,6 +6,7 @@ import admin from './Pages/AdminFolder/admin'
 import Login from './AuthPages/Login'
 import Register from './AuthPages/Register'
 import ProtectedPage from './Pages/Layout/ProtectedPage'
+import ProductList from './Shared/ProductList'
 
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
       {
         path:"admin",
         element:<admin/>
+      },
+      {
+        path:"productlist",
+        element:<ProductList/>
       }
     ]
 
